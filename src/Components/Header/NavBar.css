@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.logo{
+    height: 2.5%;
+    width: 5%;
+}
+
+a{
+    margin: 40px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+ @media screen and (max-width = 800px) {
+    header{
+        display: none;
+    }
+ }
