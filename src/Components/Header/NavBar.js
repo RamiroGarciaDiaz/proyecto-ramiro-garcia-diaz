@@ -1,19 +1,39 @@
 import React from "react";
 import logo from "../../Assets/tienda-online-default.png"
 import "./NavBar.css"
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import CartWidget from "../CartWidget/CartWidget";
 
+const menuItems = [
+    {
+        id: 1,
+        label: "Nosotros",
+        href: "#Nosotros"
+    },
+    {
+        id:2,
+        label: "Menu",
+        href: "#Menu"
+    },
+    {
+        id: 3,
+        label: "Contacto",
+        href: "#Contacto"
+    }
+]
 const NavBar = () => {
+
     return (
-        <header>
-        <img src={logo} class="logo" alt="logo tienda online" />
+        <header className="nav">
+        <img src={logo} className="nav-logo" alt="logo tienda online" />
         <h1>Mi Tienda Online</h1>
         <nav>
-            <a href="#Nosotros">Nosotros</a>
-            <a href="Menu">Menu</a>
-            <a href="#Contacto">Contacto</a>
+            {menuItems.map((item)=>(
+                <a className= "nav-item" href={item.href} key={item.id}>
+                    {item.label}</a>
+           ))}
+           
         </nav>
-       <ShoppingCartIcon color="success" fontSize="large"/>
+        <CartWidget/>      
         </header>
     )
 }
